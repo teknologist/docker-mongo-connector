@@ -1,6 +1,6 @@
 #This will prepare a elasticsearch node with mongo-connector enabled
 
-FROM python:3.4.3
+FROM python:3.5
 MAINTAINER teknologist@gmail.com
 
 ENV DEBIAN_FRONTEND noninteractive
