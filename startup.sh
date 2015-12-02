@@ -8,6 +8,9 @@ expected_result="\"ismaster\" : true"
 mongo="${MONGO:-mongo}"
 elasticsearch="${ELASTICSEARCH:-elasticsearch}"
 
+echo "Starting mongo connecteor 2.1 with: "
+echo "Mongo: ${mongo}"
+echo "ElasticSearch: ${elasticsearch}"
 
 while true;
 do

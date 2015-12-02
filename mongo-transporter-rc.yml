@@ -1,0 +1,22 @@
+kind: "ReplicationController"
+apiVersion: "v1"
+metadata:
+    name: "mongo-connector"
+spec:
+    replicas: 1
+    selector:
+      type: "mongo-connector"
+    template:
+      metadata:
+        labels:
+          type: "mongo-connector"
+      spec:
+        containers:
+          - name: "mongo-connector"
+            image: "teknologist/docker-mongo-connector:latest"
+            env:
+                - name: MONGO
+                  value: "mongo-cluster.default.cluster.local"
+                - name: ELASTICSEARCH
+                  value: "elasticsearch.default.cluster.local"
+            command: ["/bin/bash","/tmp/startup.sh"]
