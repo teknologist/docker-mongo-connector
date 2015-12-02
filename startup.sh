@@ -28,3 +28,8 @@ sleep 1
 
 
 mongo-connector --auto-commit-interval=0 --oplog-ts=/data/oplog.ts -m ${mongo}:27017 -t ${elasticsearch}:9200 -d elastic_doc_manager
+
+while true;
+do
+  echo "staying alaive...stayinbg alive..."
+done
