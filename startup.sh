@@ -31,5 +31,5 @@ mongo-connector --auto-commit-interval=0 --oplog-ts=/data/oplog.ts -m ${mongo}:2
 
 while true;
 do
-  echo "staying alaive...stayinbg alive..."
+  echo "staying alaive...staying alive..."
 done
