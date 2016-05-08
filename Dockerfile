@@ -8,7 +8,7 @@ ENV TZ UTC
 
 # Installing Mongo Connector which will connect MongoDB and Elasticsearch
 #RUN pip install mongo-connector==2.1
-RUN git clone https://github.com/algolia/mongo-connector.gits && \
+RUN git clone https://github.com/algolia/mongo-connector.git && \
 git checkout algolia && \
 cd mongo-connector && \
 python setup.py install
