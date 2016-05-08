@@ -8,10 +8,11 @@ expected_result="\"ismaster\" : true"
 mongo="${MONGO:-mongo}"
 elasticsearch="${ELASTICSEARCH:-elasticsearch}"
 namespaces="${NAMESPACES:-namespaces}"
+algolia=${ALGOLIA:-unknown}
 
 echo "Starting mongo connecteor 2.1 with: "
 echo "Mongo: ${mongo}"
-echo "ElasticSearch: ${elasticsearch}"
+echo "Algolia: ${algolia}"
 
 while true;
 do
@@ -28,6 +29,6 @@ done
 sleep 1
 
 
-mongo-connector --auto-commit-interval=0 -n ${namespaces} --oplog-ts=/data/oplog.ts -m ${mongo}:27017 -t ${elasticsearch}:9200 -d elastic_doc_manager
+mongo-connector --auto-commit-interval=0 --oplog-ts=/data/oplog.ts -n ${namespaces} --oplog-ts=/data/oplog.ts -m ${mongo}:27017 -t ${algolia} -d algolia_doc_manager
 
 /usr/bin/tail -f /mongo-connector.log

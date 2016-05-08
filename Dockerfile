@@ -7,7 +7,11 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV TZ UTC
 
 # Installing Mongo Connector which will connect MongoDB and Elasticsearch
-RUN pip install mongo-connector==2.1
+#RUN pip install mongo-connector==2.1
+RUN git clone https://github.com/algolia/mongo-connector.gits && \
+git checkout algolia && \
+cd mongo-connector && \
+python setup.py install
 
 COPY startup.sh /tmp/
 
